@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg-top: #0b0b0b;
+  --bg-mid: #171717;
+  --bg-bottom: #050505;
 }
 
 @theme inline {
@@ -23,4 +26,25 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* smooth scrolling for in-page anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background used for content sections below the hero to increase contrast */
+.content-bg {
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 20%, var(--bg-bottom) 100%);
+  /* subtle vignette to mimic screenshot */
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 18%, rgba(0,0,0,0.6) 100%), radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.6) 60%);
+}
+
+.content-bg .max-w-6xl { position: relative; }
+
+/* Apply the same dark gradient site-wide behind all content. Hero components that set their own background
+   (for example `bg-black`) will remain visually distinct because they are opaque. */
+.site-bg {
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 20%, var(--bg-bottom) 100%);
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 18%, rgba(0,0,0,0.6) 100%), radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.6) 60%);
 }
