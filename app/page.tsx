@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import TeamCards from "../components/TeamCards";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -10,11 +10,10 @@ export default function Home() {
       <main id="top">
         <Hero />
         <div className="content-bg">
-          <TeamCards />
           <About />
+          <Footer />
         </div>
       </main>
     </>
   );
 }
-
